@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web SIG Destinasi Wisata Kota Bandung</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-success shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold">
+            🌍 Web SIG Destinasi Wisata Bandung
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center">
+    <div class="container py-5 text-white">
+        <h1 class="fw-bold">Sistem Informasi Geografis</h1>
+        <p class="lead">Persebaran Destinasi Wisata Kota Bandung</p>
+    </div>
+</section>
+
+<div class="container mt-4">
+
+    <div class="row g-4">
+
+        <!-- SIDEBAR -->
+        <div class="col-lg-3">
+
+            <!-- Search -->
+            <div class="card shadow mb-3">
+                <div class="card-body">
+                    <h5>Pencarian</h5>
+
+                    <input
+                        id="search"
+                        type="text"
+                        class="form-control"
+                        placeholder="Cari wisata...">
+
+                </div>
+            </div>
+
+            <!-- Kategori -->
+            <div class="card shadow mb-3">
+                <div class="card-body">
+
+                    <h5>Kategori</h5>
+
+                    <select
+                        id="category"
+                        class="form-select">
+
+                        <option value="Semua">Semua</option>
+
+                        {% for c in categories %}
+                        <option value="{{ c }}">{{ c }}</option>
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+            </div>
+
+            <!-- Statistik -->
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h5 class="text-center mb-4">
+                        📊 Statistik
+                    </h5>
+
+                    <div class="text-center">
+
+                        <h2
+                            id="totalWisata"
+                            class="text-success fw-bold">
+                            0
+                        </h2>
+
+                        <small>Total Wisata</small>
+
+                        <hr>
+
+                        <h2
+                            id="totalKategori"
+                            class="text-primary fw-bold">
+                            0
+                        </h2>
+
+                        <small>Kategori</small>
+
+                        <hr>
+
+                        <h2
+                            id="rating"
+                            class="text-warning fw-bold">
+                            0
+                        </h2>
+
+                        <small>Rata-rata Rating</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- END SIDEBAR -->
+
+
+        <!-- MAP -->
+        <div class="col-lg-9">
+
+            <div class="card shadow">
+
+                <div class="card-body p-2">
+
+                    <div id="map"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CARD -->
+<div class="container mt-5">
+
+    <h2 class="mb-4">
+        Daftar Destinasi Wisata
+    </h2>
+
+    <div
+        class="row"
+        id="wisataContainer">
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+
+    © 2026 Web SIG Destinasi Wisata Kota Bandung
+
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
