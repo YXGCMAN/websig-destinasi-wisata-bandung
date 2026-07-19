@@ -78,7 +78,7 @@ python app.py
 Buka browser
 
 ```
-http://127.0.0.1:5000
+(https://tylerpinkman.pythonanywhere.com/)
 ```
 
 ---
@@ -93,8 +93,8 @@ PythonAnywhere
 
 ## Author
 
-- Adham Resi Ghiffari
-- Pira
+- Adham Resi Ghiffari 202332150
+- Zhafira Aulia Descha Arianto 202332129
 
 Institut Teknologi PLN
 2026
